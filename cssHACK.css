@@ -1,0 +1,76 @@
+html{-webkit-overflow-scrolling: touch;}/*解决iOS native app 内部html网页卡顿问题，实现滑动，回弹，加速等效果*/
+
+/*渐变*/
+.gradient{ width:200px; height:200px;
+		border: 1px solid #333;
+		background: linear-gradient(top,red,yellow);
+		background: -moz-linear-gradient(top,red,yellow);
+		background: -webkit-linear-gradient(top,red,yellow);
+		background: -ms-linear-gradient(top,red,yellow);
+		/*IE9 IE8渐变效果需要用 滤镜*/
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ffffff,endColorstr=#f8f8f8)";
+
+		/*IE7 IE6渐变效果需要用 hack 取渐变折中色*/
+		+background: #ff7a00;
+	}
+div {
+	transform:translate(200px,100px);
+	-webkit-transform:translate(200px,100px);/*safari chrome*/
+	-ms-transform:translate(200px,100px);/*IE*/
+	-o-transform:translate(200px,100px);/*opera*/
+	-moz-transform:translate(200px,100px);/*Firefox*/
+}
+
+/*透明度opacity属性*/
+{
+	filter:alpha(opacity=50);/*ie8-*/
+	-moz-opacity:0.5;  
+	-khtml-opacity: 0.5;  
+	opacity: 0.5; 
+}
+
+/*圆角border-radius,属性  chrome4.0 -webkit-	  ie9.0	4.0    -moz-5.0 -webkit-	10.5 -o-*/
+
+visibility属性指定一个元素是否是可见的。visible,hidden（相当于隐藏元素，占位）,collapse,inherit
+display 属性规定元素应该生成的框的类型。none（相当于删除元素）,block,inline-block等
+
+CSS 框模型 (Box Model)：盒模型
+背景：内容+内边距+边框
+浏览器兼容性， IE 5 和 IE6 在怪异模式中使用自己的非标准模型。， width=内容+内边距+边框，虽然有方法解决这个问题。但是目前最好的解决方案是回避这个问题。也就是，不要给元素添加具有指定宽度的内边距，而是尝试将内边距或外边距添加到元素的父元素和子元素。
+IE8及更早IE版本不支持  填充的宽度  和  边框的宽度  属性设。解决IE8及更早版本不兼容问题可以在HTML页面声明 <!DOCTYPE html>即可。
+
+img 在div/li/任何盒子中，图片的底边下有看不到的宽度，需要做特殊处理，去除。vertical-align:top;
+
+IE8
+input 设置宽高后，还必须设置 行高，不然光标偏上
+nth-of-type(n) 不支持，必须是IE9+
+
+select 标签 是border-box盒模型
+兼容IE6/IE7/IE8/火狐浏览器的下拉菜单select样式设置
+
+
+/*水平居中，
+block 直接用 margin:0 auto;  
+inline-block 必须用 text-align:center;由于行内块不是块，margin无效，行内块只有宽和高属性，因此，可以当作文字处理，使用text-align属性
+*/
+/*图片的垂直居中，需要加入一个空标签，hack如下*/
+ <div class="footer">
+    <span></span>
+    <img src="../Content/images/cardImg/footer_logo.png">
+</div>
+.footer{
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	height:50px;
+	background:#f5f5f5;
+	text-align:center;
+}
+.footer span{height:100%; display:inline-block; vertical-align:middle;}
+.footer img{width:30%; display:inline-block; vertical-align:middle;}
+
+对于div中的div也可以用这种方式进行 垂直居中
+
+解决手机页面overflow scroll滑动很卡的问题
+滚动回弹效果.
+-webkit-overflow-scrolling: touch;

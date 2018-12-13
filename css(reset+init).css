@@ -1,0 +1,152 @@
+@charset "utf-8";
+/*字体不需要重置，可以重置英文字体tahoma*/
+
+/*样式清空*/
+body, h1, h2,h3,h4,h5,h6,p,dl,dd,ol,ul,form, input,textarea,th,td,select { margin:0; padding:0;}
+em,i { font-style:normal;}
+li { list-style:none;}
+a { text-decoration:none; cursor:pointer; color: black;}
+a:focus {outline:none;}
+b{ font-weight:normal;}
+img { border:none; vertical-align:top;display: block;}
+input, textarea {vertical-align: middle;outline: none; border:none; background:none;box-sizing:content-box;}
+textarea { resize:none; overflow:auto; }
+table { border-spacing:0px; border:none; border-collapse:collapse;}
+body, input, select, button, textarea { font-size: 12px;font-family: "微软雅黑";background:#fff;}
+html, body {position: relative;height: 100%;}
+
+html,body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,form,input,textarea,th,td,select{margin:0;padding:0;}
+em{font-style: normal;}/*斜体扶正*/
+li{list-style: none;}/*去掉点*/
+a{text-decoration: none;}/*去掉下划线*/
+img{border: none;vertical-align: top;}/*去掉放在a标签里面img的边框，并对齐*/
+table{border-collapse: collapse;}/*去掉表格间的间隔*/
+input,textarea{outline: none;}/*仅在chrome下选中会高亮边框，取消*/
+textarea{resize: none;overflow: auto;}/*仅在chrome下文本框右下角的缩放标志，取消。auto表示默认情况下右侧没有横条*/
+body{font-size: 12px;font-family: "微软雅黑"}/*UI样式图的要求*/
+
+
+body{font-size:12px;font-family: "微软雅黑"；}
+body{ height: 100%; position: relative; width: 100%; background: #f8f8f8; font-family:Helvetica; }
+a,button,input{
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent; /* For some Androids */
+}
+
+/*样式重置
+因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异。当然，初始化样式会对SEO有一定的影响，但鱼和熊掌不可兼得，但力求影响最小的情况下初始化。
+*/
+em{font-style:normal;}
+/*淘宝的样式初始化代码：*/
+html, body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+body, button, input, select, textarea { font:12px/1.5,tahoma, arial, \5b8b\4f53; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+small{ font-size:12px; }
+ul, li, ol { list-style:none; }
+a { text-decoration:none; }
+a:hover { text-decoration:underline; }
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; }
+table { border-collapse:collapse; border-spacing:0; }
+input, textarea{resize:none;overflow: auto;}
+
+
+/*a标签内颜色比较特殊，直接设置a标签的颜色，就不用加入如下样式重置*/
+.a_style_none:hover { color:#000; }
+.a_style_none:link {color:#000;}
+.a_style_none:visited {color:#000;}
+.a_style_none:active {color:#000;}
+.a_style_w:hover { color:#fff; }
+.a_style_w:link {color:#fff;}
+.a_style_w:visited {color:#fff;}
+.a_style_w:active {color:#fff;}
+
+
+最简单的初始化方法： * {padding: 0; margin: 0;} （强烈不建议）
+
+.pos_a{position:absolute;top:0;left:0;}
+.pos_r{position:relative;}
+.Anoborder{
+  border:none !important;
+}
+
+/*public*/
+.font_b { font-weight:bold; }
+.float_l{ float:left; }
+.float_r{ float:right; }
+.clear { clear:both; }
+.overflow_h { overflow:hidden; }
+.overflow_v { overflow:visible; }
+.overflow_s { overflow:scroll; }
+/*浮动元素清除浮动*/3中方式
+父元素添加overflow_h,末尾追加元素设置clear：both，末尾追加伪类
+.clear { clear:both; }
+.overflow_h { overflow:hidden; }
+.clear_anchor:after{content:''; display:block; clear:both;}
+/*浮动元素的父元素需要清除浮动*/
+.clear{zoom: 1;}
+.clear:after{content: '';display: block;clear: both;}
+
+/*单行内文字排列方式不同，少用浮动*/
+.algn_center{ text-align:center;}
+.algn_right{ text-align:right;}
+.algn_left{ text-align:left;}
+
+/*动态设置rem，用媒体查询来设置html的font-size：*/
+
+重置浏览器默认字体16px的方式（即psd，实测16px=1rem）
+@media screen and (min-width: 320px) {
+    html {font-size: 12px;}
+} 
+@media screen and (min-width: 480px) {
+    html {font-size: 14px;}
+} 
+@media screen and (min-width: 600px) {
+    html {font-size: 16px;}
+}
+@media screen and (min-width: 700px) {
+    html {font-size: 18px;}
+}
+@media screen and (min-width: 800px) {
+    html {font-size: 20px;}
+}
+@media screen and (min-width: 900px) {
+    html {font-size: 22px;}
+}
+@media screen and (min-width: 1080px) {
+    html {font-size: 24px;}
+}
+@media screen and (min-width: 1200px) {
+    html {font-size: 26px;}
+}
+
+不重置浏览器默认字体，浏览器默认字体16px=1rem，设基准屏幕宽度为480px，则360的屏幕设font-size：100%；
+@media screen and (min-width: 320px) {
+    html {font-size: 75% !important;}/*12px=1rem*/
+} 
+@media screen and (min-width: 480px) {
+    html {font-size: 87.5% !important;}/*14px=1rem*/
+} 
+@media screen and (min-width: 600px) {
+    html {font-size: 100% !important;}/*16px=1rem*/
+}
+@media screen and (min-width: 700px) {/*18px=1rem*/
+    html {font-size: 112.5% !important;}
+}
+@media screen and (min-width: 800px) {/*20px=1rem*/
+    html {font-size: 125% !important;}
+}
+@media screen and (min-width: 900px) {/*22px=1rem*/
+    html {font-size: 137.5% !important;}
+}
+@media screen and (min-width: 1080px) {/*24px=1rem*/
+    html {font-size: 150% !important;}
+}
+@media screen and (min-width: 1200px) {/*26px=1rem*/
+    html {font-size: 162.5% !important;}
+}
