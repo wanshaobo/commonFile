@@ -39,7 +39,7 @@ a,button,input{
 em{font-style:normal;}
 /*淘宝的样式初始化代码：*/
 html, body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
-body, button, input, select, textarea { font:12px/1.5,tahoma, arial, \5b8b\4f53; }
+body, button, input, select, textarea { font-size:12px }
 h1, h2, h3, h4, h5, h6{ font-size:100%; }
 address, cite, dfn, em, var { font-style:normal; }
 code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
@@ -83,8 +83,8 @@ input, textarea{resize:none;overflow: auto;}
 .overflow_h { overflow:hidden; }
 .overflow_v { overflow:visible; }
 .overflow_s { overflow:scroll; }
-/*浮动元素清除浮动*/3中方式
-父元素添加overflow_h,末尾追加元素设置clear：both，末尾追加伪类
+/*浮动元素清除浮动3中方式
+父元素添加overflow_h,末尾追加元素设置clear：both，末尾追加伪类*/
 .clear { clear:both; }
 .overflow_h { overflow:hidden; }
 .clear_anchor:after{content:''; display:block; clear:both;}
@@ -97,9 +97,9 @@ input, textarea{resize:none;overflow: auto;}
 .algn_right{ text-align:right;}
 .algn_left{ text-align:left;}
 
-/*动态设置rem，用媒体查询来设置html的font-size：*/
+/*动态设置rem，用媒体查询来设置html的font-size：
 
-重置浏览器默认字体16px的方式（即psd，实测16px=1rem）
+重置浏览器默认字体16px的方式（即psd，实测16px=1rem）*/
 @media screen and (min-width: 320px) {
     html {font-size: 12px;}
 } 
@@ -125,7 +125,7 @@ input, textarea{resize:none;overflow: auto;}
     html {font-size: 26px;}
 }
 
-不重置浏览器默认字体，浏览器默认字体16px=1rem，设基准屏幕宽度为480px，则360的屏幕设font-size：100%；
+/*不重置浏览器默认字体，浏览器默认字体16px=1rem，设基准屏幕宽度为480px，则360的屏幕设font-size：100%；*/
 @media screen and (min-width: 320px) {
     html {font-size: 75% !important;}/*12px=1rem*/
 } 
